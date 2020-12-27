@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block page_content %}   
+    <header>{% block header %}
+        {% include "header.html" %}
+    {% endblock %}
+    </header>
+    
+	
+    <div class="main_content">
+        <div class="content">
+        {% block main_content %}
+        {% endblock %}
+        </div>
+    </div>
+   
+      
+{% endblock %}

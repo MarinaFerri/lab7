@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<header>{% block header %}
+        {% include "header.html" %}
+    {% endblock %}
+</header>
+
+
+{% block main_content %}
+	<!--{% include "flash.html" %} -->
+    <div class="main_content">
+        <div class="content" id="form">
+            <form action="" method="post" >
+                {{ form.hidden_tag() }}
+                <p class="pflash">
+                    {{ form.username.label }}<br>
+                    {{ form.username(size=32) }}<br>
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">[{{ error }}]
+                    <br></span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.password.label }}<br>
+                    {{ form.password(size=32) }}<br>
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]
+                    <br></span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.remember() }} {{ form.remember.label }}</p>
+                <p class="button">{{ form.submit() }}</p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% endblock %}

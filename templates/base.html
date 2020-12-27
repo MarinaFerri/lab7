@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="static/styles.css">
+        <title>{% block title %}World{% endblock %}</title>
+        {% endblock %}
+    </head>
+    
+    <body>
+	{% include "flash.html" %}
+	{% block page_content %}
+		
+		{% block main_content %}
+		{% endblock %}
+    {% endblock %}
+    </body>
+	<footer id="footer">{% block footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+    </footer>
+</html>
